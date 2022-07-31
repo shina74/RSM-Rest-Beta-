@@ -1,0 +1,2 @@
+[besporyadka_net]
+162.0.216.50    ansible_connection=ssh    ansible_user=root

@@ -1,0 +1,20 @@
+---
+- name: HW
+  hosts: besporyadka_net
+  gather_facts: no
+  become: true
+  tasks: 
+    
+    - name: load container
+      docker_image:
+        name: besporyadka_net:latest
+        load_path: /root/besporyadka_net.tar
+        state: present
+        source: load
+      
+    - name: run container
+      docker_container:
+        name: besporno_good
+        image: besporyadka_net:latest
+        state: started
+        
